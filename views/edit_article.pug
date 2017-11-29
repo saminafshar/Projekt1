@@ -1,0 +1,31 @@
+extends layout
+
+
+block content
+block content1
+    section
+        h1 #{title}
+    article
+        form(method ='POST', action='/articles/add')
+            #form-group
+                label Titel:
+                input.form-control(name='title', type='text')
+            #form-group
+                label Firma:
+                input.form-control(name='firm', type='text')
+            #form-group
+                label Straße:
+                input.form-control(name='street', type='text')
+            #form-group
+                label Hausnummer:
+                input.form-control(name='housenumber', type='text')
+            #form-group
+                label Postleitzahl:
+                input.form-control(name='zipcode', type='text')
+            #form-group
+                label Stadt:
+                input.form-control(name='city', type='text')
+            #form-group
+                label Zusätzliche Informationen:
+                textarea.form-control(name='body')
+                input.button2(type='submit', value='Eintrag ändern')

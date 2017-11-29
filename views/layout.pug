@@ -1,0 +1,60 @@
+doctype html
+block content
+html
+  head
+        title #{title}
+        link(rel = 'stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        link(rel = 'stylesheet' href='/css/style.css')
+        link(rel ='stylesheet' href ='/css/normalize.css')
+  body
+    nav
+      ul
+        a.active(href='/')
+          li Home
+        if user
+          a(href='/articles/add')
+            li Eintrag hinzufügen
+          a(href='/users/logout')
+            li Logout
+        else
+          a(href='/users/register')
+            li Registrieren
+          a(href='/users/login')
+            li Anmelden
+        a(href='/ueberuns')
+          li Impressum
+        a(href='/search/search')
+          li
+            button.suche(type='button')
+              span.glyphicon.glyphicon-search
+
+
+    |  Search
+
+  br
+  hr
+  .container
+
+    != messages ('message', locals)
+    if errors
+        each error, i in errors
+            div(class='alert alert-danger') #{error.msg}
+block content1
+  section
+    table.big-table(align='center')
+      tbody
+        tr
+          td
+
+block content2
+  article
+    table(align='center')
+      tbody
+        tr
+          td
+
+
+
+    script(src='/bower_components/jquery/dist/jquery.js')
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='/js/main.js')

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+block content1
+    section
+        h1=article.title
+        h5 erstellt von #{author}
+        h6=article.firm
+        h6=article.street+" "+ article.housenumber
+        h6=article.zipcode
+        h6=article.city
+        h6=article.body
+        if user
+            if user.id == article.author
+                a.btn.btn-default(href='/articles/edit/'+article._id) Bearbeiten
+                a.btn.btn-danger.delete-article(href='#', data-id=article._id) Löschen

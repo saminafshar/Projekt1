@@ -1,0 +1,14 @@
+extends layout
+
+block content
+block content1
+    section
+        h1 Suchen
+    article
+        .panel-heading
+          form(method ='POST', action='/search/search')
+            #form-group
+                label Stichwortsuche, z.B. Firma, Adresse, Stadt
+                input.form-control(name='search', type='text')
+                input.button2(type='submit', value='Suchen')
+block content2

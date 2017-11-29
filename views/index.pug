@@ -1,0 +1,65 @@
+extends layout
+
+
+block content
+block content1
+
+    .slideshow-container
+    .mySlides.fade
+      img(src='bilder/bild.jpg', style='width:100%')
+    .mySlides.fade
+      img(src='bilder/bild2.jpg', style='width:100%')
+    .mySlides.fade
+      img(src='bilder/bild3.jpg', style='width:100%')
+
+
+
+    section
+        h1 Das Telefonbuch Online
+block content2
+
+    article
+        h1 Beispiel Einträge
+
+        h2
+          each article, i in articles
+                  li.result
+                      a(href="/articles/"+article._id)=article.title
+
+
+    section
+        h1 "Erinnert mich an die Gelben Seiten" - Spiegel Online
+
+    article
+        h1 Was suchen Sie?
+        .panel-heading
+          form(method ='POST', action='/search/search')
+            #form-group
+                label Stichwortsuche, z.B. Firma, Adresse, Stadt
+                input.form-control(name='search', type='text')
+                input.button2(type='submit', value='Suchen')
+
+
+    section
+       h1 "Super einfach und verständlich!" - Computer Bild
+
+    article
+       h1 Holen Sie sich die App!
+       img.handy(src="/bilder/handy.png")
+       img.handy(src="/bilder/soon.png")
+
+       script(src='js/jquery.js')
+       script.
+         var slideIndex = 0;
+         showSlides();
+         function showSlides() {
+         var i;
+         var slides = document.getElementsByClassName("mySlides");
+         for (i = 0; i < slides.length; i++) {
+         slides[i].style.display = "none";
+         }
+         slideIndex++;
+         if (slideIndex > slides.length) {slideIndex = 1}
+         slides[slideIndex-1].style.display = "block";
+         setTimeout(showSlides, 4000);
+         }

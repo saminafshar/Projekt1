@@ -1,0 +1,18 @@
+extends layout
+
+
+block content
+block content1
+  section
+    table.big-table(align='center')
+      h1 Anmelden
+block content2
+  article
+    form(method ='POST', action='/users/login')
+      #form-group
+          label Benutzername:
+          input.form-control(name='username', type='text', placeholder='Benutzername')
+          #form-group
+          label Passwort:
+          input.form-control(name='password', type='password', placeholder='Passwort')
+          input.button2(type='submit', value='Einloggen')

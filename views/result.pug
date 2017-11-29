@@ -1,0 +1,13 @@
+extends layout
+
+block content
+block content1
+    section
+        h1 Suchergebnisse
+
+    article
+
+        u1
+            each article, i in articles
+                li.result
+                    a(href="/articles/"+article._id)=article.title

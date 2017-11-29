@@ -1,0 +1,26 @@
+extends layout
+
+block content
+block content1
+    section
+        h1 Registrieren
+block content2
+    article
+        form(method ='POST', action='/users/register')
+            #form-group
+                label Name:
+                input.form-control(maxlength='50', name='Name', size='45', type='text', placeholder='Name')
+            #form-group
+                label Benutzername:
+                input.form-control(maxlength='50', name='Benutzername', size='45', type='text', placeholder='Benutzername')
+            #form-group
+                label Passwort:
+                input.form-control(name='password', type='password', placeholder='Passwort')
+            #form-group
+                label Passwort wiederholen:
+                input.form-control(name='password2', type='password', placeholder='Passwort')
+
+
+
+
+                input.button2(type='submit', value='Registrieren')
