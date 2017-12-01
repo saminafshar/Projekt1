@@ -40,7 +40,7 @@ router.post('/add',ensureAuthenticated, function(req,res){
         article.housenumber = req.body.housenumber;
         article.zipcode = req.body.zipcode;
         article.city = req.body.city;
-        article.body = req.body.body;
+        //article.body = req.body.body;
     
         article.save(function(err){
             if(err){
